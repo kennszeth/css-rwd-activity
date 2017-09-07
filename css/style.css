@@ -24,27 +24,33 @@ main {
 
 .about {
 	background-color: indianred;
-	height: 700px;
+	/*height: 700px;*/
+	min-height: 300px;
 }
 
 .services {
 	background-color: midnightblue;
-	height: 300px;
+	/*height: 100%;*/
+	min-height: 300px;
+	color: #fff;
 }
 
 .projects {
 	background-color: crimson;
-	height: 300px;
+	/*height: 300px;*/
+	min-height: 300px;
 }
 
 .gallery {
 	background-color: orange;
-	height: 400px;
+	/*height: 400px;*/
+	min-height: 400px;
 }
 
-	footer {
+footer {
 	background-color: lightgreen;
-	height: 50px;
+	/*height: 50px;*/
+	min-height: 50px
 }
 
 nav,
@@ -85,3 +91,254 @@ ul > li > a {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+/*/////////////////////////////////////////////-changes-///////////////////////////////////////////////*/
+.column {
+	border: 1px solid #fff;
+	width: 31%;
+	float: left;
+	margin-left: 1%;
+	margin-right: 1%;
+	padding: 20px;
+}
+
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+} /*to avoid overlapping between blocks*/
+
+img[alt*="Services"] {
+	border: 1px solid #fff;
+	width: 60px;
+	height: 60px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+} /*display:block to set the width and height value that you declared.*/
+
+img[alt*="Services"] ~ h3 {
+	margin-bottom: 10px;
+}
+
+img[alt*="Services"] ~ p{
+	overflow: hidden
+} /*this code will target the paragraph inside a sibling (img ~ p)*/
+
+.gallery > .column { /*direct decendant of the selector of the target.*/  /*1st level decendant*/
+	width: 23%;
+	margin: 0 1%; /*shorthand for top=0 right=1% bottom=0 left=1%;*/
+	border-color: black;
+	}
+
+img[alt*="Gallery"] {
+	border: 1px solid black;
+	width: 100%;
+	height: 100px;
+	display: block;
+} 
+
+img[alt*="Social"] {
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	display: block;
+	float: left;
+	margin-right: 20px;
+}
+
+div.contact { /*emphasizing the div element*/    /*div[space].contact targets everything */
+	float: right;
+}
+
+
+/*1.make things work
+2.make things fast
+3.make things right*/	
+
+
+/*mobile*/
+@media only screen and (max-width: 400px) /*<-breakpoint*/ {
+	body {
+		background-color: indianred;
+		width: 100%;
+	}
+
+	/*.sign-up,
+	.feature-1,
+	.feature-2,
+	.feature-3 {
+		width: 50%;
+	}*/
+	nav{
+		float: left;
+		position: relative;
+		width: 100%;
+	}
+	main{
+		margin-left: -200px;
+	}
+	.banner,
+	.about,
+	.services,
+	.projects,
+	.gallery,
+	footer {
+		position: relative;
+		float: left;
+		width: 100%;	
+		margin-left: 100px;
+		margin-bottom: 2px;
+		text-align: justify;
+	}
+
+	.services{
+	color: black;
+	
+	}
+	.services > .column {
+		border: 1px solid black;
+		float: left;
+		width: 68%;
+		margin-left: 80px;
+		margin-right: 80px;
+		margin-bottom: 20px;
+	}
+		img[alt*="Services"] {
+		border: 1px solid black;
+	}
+
+	.gallery > .column {
+		float: left;
+		width: 68%;
+		margin-left: 80px;
+		margin-right: 100px;
+		margin-bottom: 20px;
+	}
+
+	footer {
+		margin: 0 auto;
+	}
+
+	small {
+		position: absolute;
+		line-height: 1px;
+		margin-left: 200px;
+	}
+
+	img[alt*="Social"] {
+		line-height: 10px;
+	width: 30px;
+	height: 30px;
+	display: inline;
+	border: 1px solid black;
+	margin: 0 auto;
+	margin-right: 40px;
+	}
+
+	.box {
+		width: 60%;
+		line-height: 50px;
+	}
+
+	h2 {
+		margin-left: 80px;
+	}
+
+	p {
+		margin-left: 80px;
+		text-align: left;
+		width: 70%;
+		margin-bottom: 10px;
+		display: inline-block;
+		float: left;
+	}
+
+	.banner > div > p {
+		margin-left: 0px;
+		width: 100%;
+	}
+}
+
+/*tablet*/
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+	body {
+		background-color: teal;
+	}
+/*	.sign-up,
+	.feature-1,
+	.feature-2,
+	.feature-3 {
+		width: 50%;
+		float: left;
+	}*/
+	.banner {
+		background-color: teal;
+	}
+		nav {
+		position: absolute;
+		height: 1000px;
+	}
+
+	.services{
+		color: black;
+	
+	}
+	.services > .column {
+		border: 1px solid black;
+		float: left;
+		width: 100%;
+	}
+		img[alt*="Services"] {
+		border: 1px solid black;
+	}
+
+	.gallery > .column {
+		float: left;
+		width: 48%;
+		margin-bottom: 30px;
+	}
+
+
+}
+
+
+/*laptop/desktop*/
+@media only screen and (min-width: 961px){
+	body {
+		width: 1000px;
+		background-color: skyblue;
+	}
+
+		/*.page {
+			width: 960px;
+			margin: 0 auto;
+		}
+		.feature-1,
+		.feature-2,
+		.feature-3 {
+			width: 33.33%;
+			float: left;
+		}
+		.header {
+			height: 400px;
+		}*/
+	nav {
+		position: absolute;
+		height: 1000px;
+	}
+	.services{
+		color: black;
+		float: left;
+	}
+	.services > .column {
+		border: 1px solid black;
+		float: inherit;
+		
+	}
+	img[alt*="Services"] {
+		border: 1px solid black;
+	}
+
+}
+
+
